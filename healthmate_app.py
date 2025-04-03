@@ -6,12 +6,12 @@ from google_sheet_writer import write_to_google_sheet
 from rag_helper import get_knowledge_context
 from rag_helper import init_knowledge_base
 
-# Initialize knowledge base on app startup
-init_knowledge_base()
-
 # ====== Configuration ======
 model = "gpt-4"
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Initialize knowledge base on app startup
+init_knowledge_base()
 
 # ====== Prompt Definitions with Few-shot Examples ======
 PROMPT_DICT = {
