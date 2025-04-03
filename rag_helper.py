@@ -11,7 +11,7 @@ def get_pdf_text(folder_path="data"):
                     text_chunks.append(page.get_text())
     return "\n".join(text_chunks)
 
-def get_context(query=None, folder_path="data", max_chars=3000):
+def get_knowledge_context(query=None, folder_path="data", max_chars=3000):
     full_text = get_pdf_text(folder_path)
     # Optional: Simple truncation to stay within token limits
     if len(full_text) > max_chars:
