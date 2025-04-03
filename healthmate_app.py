@@ -43,11 +43,7 @@ PROMPT_DICT = {
 
 # ====== URL Param Reader ======
 def get_url_params():
-    try:
-        query_params = st.query_params  # Streamlit ≥ 1.31
-    except AttributeError:
-        query_params = st.experimental_get_query_params()  # Older versions
-
+    query_params = st.experimental_get_query_params()
     pid = query_params.get("pid", ["unknown"])[0]
     cond = query_params.get("cond", ["1"])[0]
     return pid, cond
