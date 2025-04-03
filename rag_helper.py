@@ -2,7 +2,7 @@ import os
 import fitz  # PyMuPDF
 from typing import List
 import numpy as np
-from openai import OpenAI
+import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
