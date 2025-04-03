@@ -3,6 +3,7 @@ import fitz  # PyMuPDF
 from typing import List
 import numpy as np
 from openai import OpenAI
+import streamlit as st  
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
