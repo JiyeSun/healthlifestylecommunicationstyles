@@ -11,3 +11,4 @@ numpy>=1.21.0
 protobuf<5
 python-dateutil>=2.8.0
 requests>=2.25.0
+httpx==0.27.0
