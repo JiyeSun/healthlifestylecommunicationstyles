@@ -1,17 +1,14 @@
 import os
 import fitz  # PyMuPDF
 from typing import List
-from sentence_transformers import SentenceTransformer
 import numpy as np
-import faiss
+from openai import OpenAI
 
-# Load embedding model (you can change to 'all-MiniLM-L6-v2' or OpenAI)
-EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+# Initialize OpenAI client (assumes environment variable or streamlit secret)
+openai_client = OpenAI()
 
-# Global FAISS index and document chunks
-INDEX = None
 DOC_CHUNKS = []
-EMBED_DIM = 384  # Depends on model (MiniLM is 384)
+CHUNK_EMBEDDINGS = []
 
 
 def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
@@ -29,25 +26,27 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
     return chunks
 
 
-def build_faiss_index(chunks: List[str]):
-    global INDEX, DOC_CHUNKS
-    DOC_CHUNKS = chunks
-    embeddings = EMBED_MODEL.encode(chunks, convert_to_numpy=True)
-    index = faiss.IndexFlatL2(EMBED_DIM)
-    index.add(np.array(embeddings))
-    INDEX = index
-
-
-def get_knowledge_context(query: str, top_k: int = 3) -> str:
-    if INDEX is None:
-        raise ValueError("FAISS index has not been initialized. Call `init_knowledge_base()` first.")
-    
-    query_embedding = EMBED_MODEL.encode([query], convert_to_numpy=True)
-    D, I = INDEX.search(np.array(query_embedding), top_k)
-    top_chunks = [DOC_CHUNKS[i] for i in I[0] if i < len(DOC_CHUNKS)]
-    return "\n".join(top_chunks)
+def get_embeddings(texts: List[str]) -> np.ndarray:
+    response = openai_client.embeddings.create(
+        model="text-embedding-3-small",
+        input=texts
+    )
+    return np.array([r.embedding for r in response.data])
 
 
 def init_knowledge_base(folder_path="data"):
-    chunks = extract_text_chunks(folder_path)
-    build_faiss_index(chunks)
+    global DOC_CHUNKS, CHUNK_EMBEDDINGS
+    DOC_CHUNKS = extract_text_chunks(folder_path)
+    CHUNK_EMBEDDINGS = get_embeddings(DOC_CHUNKS)
+
+
+def get_knowledge_context(query: str, top_k: int = 3) -> str:
+    global DOC_CHUNKS, CHUNK_EMBEDDINGS
+    if not CHUNK_EMBEDDINGS:
+        raise ValueError("Knowledge base is not initialized.")
+
+    query_embedding = get_embeddings([query])[0]
+    scores = np.dot(CHUNK_EMBEDDINGS, query_embedding)
+    top_indices = scores.argsort()[-top_k:][::-1]
+    top_chunks = [DOC_CHUNKS[i] for i in top_indices]
+    return "\n".join(top_chunks)
