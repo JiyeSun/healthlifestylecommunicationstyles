@@ -4,10 +4,7 @@ from typing import List
 import numpy as np
 from openai import OpenAI
 
-# Initialize OpenAI client (assumes environment variable or streamlit secret)
-openai_client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
-)
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 DOC_CHUNKS = []
 CHUNK_EMBEDDINGS = []
@@ -29,12 +26,12 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
 
 
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    response = openai_client.embeddings.create(
+    response = openai.Embedding.create(
         model="text-embedding-3-small",
         input=texts
     )
-    return np.array([r.embedding for r in response.data])
-
+    #return np.array([r.embedding for r in response.data])
+    return np.array([r["embedding"] for r in response["data"]])
 
 def init_knowledge_base(folder_path="data"):
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
