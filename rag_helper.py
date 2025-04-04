@@ -42,7 +42,6 @@ def init_knowledge_base(folder_path="data"):
 
 def get_knowledge_context(query: str, top_k: int = 3) -> str:
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
-    st.sidebar.success("📚 Knowledge base was called.")
     if CHUNK_EMBEDDINGS is None or len(CHUNK_EMBEDDINGS) == 0:
         raise ValueError("Knowledge base is not initialized.")
 
