@@ -5,6 +5,7 @@ import numpy as np
 import streamlit as st
 import openai
 
+# Set OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global storage
@@ -28,11 +29,11 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
 
 # Get a single embedding
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    response = openai.embeddings.create(
+    response = openai.Embedding.create(
         model="text-embedding-3-small",
         input=texts
     )
-    return np.array([e.embedding for e in response.data])
+    return np.array([item["embedding"] for item in response["data"]])
 
 # Initialize the knowledge base
 def init_knowledge_base(folder_path="data"):
