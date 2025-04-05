@@ -2,7 +2,7 @@ import os
 import fitz  # PyMuPDF
 from typing import List
 import numpy as np
-from openai import OpenAI
+#from openai import OpenAI
 import streamlit as st  
 import openai 
 
