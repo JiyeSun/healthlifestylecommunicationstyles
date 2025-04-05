@@ -26,6 +26,7 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
                             chunks.append(chunk)
     return chunks
 
+'''
 def get_embeddings(texts: List[str]) -> np.ndarray:
     response = client.embeddings.create(
         model="text-embedding-3-small",
@@ -33,13 +34,13 @@ def get_embeddings(texts: List[str]) -> np.ndarray:
     )
     return np.array([r.embedding for r in response.data])
 '''
+
 def get_embeddings(texts: List[str]) -> np.ndarray:
     response = openai.Embedding.create(
         model="text-embedding-3-small",
         input=texts
     )
     return np.array([r["embedding"] for r in response["data"]])
-'''
 
 def init_knowledge_base(folder_path="data"):
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
