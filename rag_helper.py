@@ -4,8 +4,9 @@ from typing import List
 import numpy as np
 from openai import OpenAI
 import streamlit as st  
-
+import openai 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 DOC_CHUNKS = []
 CHUNK_EMBEDDINGS = []
