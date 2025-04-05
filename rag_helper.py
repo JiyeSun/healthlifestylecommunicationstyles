@@ -2,15 +2,17 @@ import os
 import fitz  # PyMuPDF
 from typing import List
 import numpy as np
-import streamlit as st  
-import openai
-import requests
+import streamlit as st
+from openai import OpenAI
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+# Global storage
 DOC_CHUNKS = []
 CHUNK_EMBEDDINGS = []
 
+# Extract text chunks from PDFs
 def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
     chunks = []
     for filename in os.listdir(folder_path):
@@ -25,28 +27,29 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
                             chunks.append(chunk)
     return chunks
 
-def get_embedding(text: str, model="text-embedding-ada-002") -> List[float]:
-    headers = {
-        "Authorization": f"Bearer {openai.api_key}",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "input": text,
-        "model": model
-    }
-    response = requests.post("https://api.openai.com/v1/embeddings", headers=headers, json=data)
-    response.raise_for_status()
-    return response.json()["data"][0]["embedding"]
+# Get a single embedding
+def get_embedding(text: str, model="text-embedding-3-small") -> List[float]:
+    response = client.embeddings.create(
+        model=model,
+        input=[text]
+    )
+    return response.data[0].embedding
 
+# Batch embeddings for all chunks
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    embeddings = [get_embedding(text) for text in texts]
-    return np.array(embeddings)
+    response = client.embeddings.create(
+        model="text-embedding-3-small",
+        input=texts
+    )
+    return np.array([item.embedding for item in response.data])
 
+# Initialize the knowledge base
 def init_knowledge_base(folder_path="data"):
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
     DOC_CHUNKS = extract_text_chunks(folder_path)
     CHUNK_EMBEDDINGS = get_embeddings(DOC_CHUNKS)
 
+# Retrieve relevant knowledge
 def get_knowledge_context(query: str, top_k: int = 3) -> str:
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
     if not CHUNK_EMBEDDINGS or len(CHUNK_EMBEDDINGS) == 0:
