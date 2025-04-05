@@ -33,8 +33,7 @@ def get_embeddings(texts: List[str]) -> np.ndarray:
         model="text-embedding-3-small",
         input=texts
     )
-    return np.array([r.embedding for r inresponse["data"]])
-    #return np.array([r["embedding"] for r in response["data"]])
+    return np.array([r["embedding"] for r in response["data"]])
 
 def init_knowledge_base(folder_path="data"):
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
