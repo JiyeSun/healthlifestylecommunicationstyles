@@ -4,7 +4,7 @@ from typing import List
 import numpy as np
 import streamlit as st  
 import openai
-from openai.embeddings_utils import get_embedding  # Import the new helper
+import requests
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -25,9 +25,21 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
                             chunks.append(chunk)
     return chunks
 
+def get_embedding(text: str, model="text-embedding-ada-002") -> List[float]:
+    headers = {
+        "Authorization": f"Bearer {openai.api_key}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "input": text,
+        "model": model
+    }
+    response = requests.post("https://api.openai.com/v1/embeddings", headers=headers, json=data)
+    response.raise_for_status()
+    return response.json()["data"][0]["embedding"]
+
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    # Use the new embeddings helper function from the updated API.
-    embeddings = [get_embedding(text, model="text-embedding-3-small") for text in texts]
+    embeddings = [get_embedding(text) for text in texts]
     return np.array(embeddings)
 
 def init_knowledge_base(folder_path="data"):
@@ -37,9 +49,8 @@ def init_knowledge_base(folder_path="data"):
 
 def get_knowledge_context(query: str, top_k: int = 3) -> str:
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
-    if CHUNK_EMBEDDINGS is None or len(CHUNK_EMBEDDINGS) == 0:
+    if not CHUNK_EMBEDDINGS or len(CHUNK_EMBEDDINGS) == 0:
         raise ValueError("Knowledge base is not initialized.")
-
     query_embedding = get_embeddings([query])[0]
     scores = np.dot(CHUNK_EMBEDDINGS, query_embedding)
     top_indices = scores.argsort()[-top_k:][::-1]
