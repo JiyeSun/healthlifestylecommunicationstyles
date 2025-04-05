@@ -52,7 +52,7 @@ def init_knowledge_base(folder_path="data"):
 # Retrieve relevant knowledge
 def get_knowledge_context(query: str, top_k: int = 3) -> str:
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
-    if not CHUNK_EMBEDDINGS or len(CHUNK_EMBEDDINGS) == 0:
+    if CHUNK_EMBEDDINGS is None or CHUNK_EMBEDDINGS.size == 0:
         raise ValueError("Knowledge base is not initialized.")
     query_embedding = get_embeddings([query])[0]
     scores = np.dot(CHUNK_EMBEDDINGS, query_embedding)
