@@ -2,15 +2,14 @@ import os
 import fitz  # PyMuPDF
 from typing import List
 import numpy as np
-#from openai import OpenAI
 import streamlit as st  
-import openai 
+import openai
+from openai.embeddings_utils import get_embedding  # Import the new helper
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 DOC_CHUNKS = []
 CHUNK_EMBEDDINGS = []
-
 
 def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
     chunks = []
@@ -26,27 +25,15 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
                             chunks.append(chunk)
     return chunks
 
-'''
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    response = client.embeddings.create(
-        model="text-embedding-3-small",
-        input=texts
-    )
-    return np.array([r.embedding for r in response.data])
-'''
-
-def get_embeddings(texts: List[str]) -> np.ndarray:
-    response = openai.Embedding.create(
-        model="text-embedding-3-small",
-        input=texts
-    )
-    return np.array([r["embedding"] for r in response["data"]])
+    # Use the new embeddings helper function from the updated API.
+    embeddings = [get_embedding(text, model="text-embedding-3-small") for text in texts]
+    return np.array(embeddings)
 
 def init_knowledge_base(folder_path="data"):
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
     DOC_CHUNKS = extract_text_chunks(folder_path)
     CHUNK_EMBEDDINGS = get_embeddings(DOC_CHUNKS)
-
 
 def get_knowledge_context(query: str, top_k: int = 3) -> str:
     global DOC_CHUNKS, CHUNK_EMBEDDINGS
