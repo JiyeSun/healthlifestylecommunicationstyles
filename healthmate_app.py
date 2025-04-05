@@ -1,5 +1,5 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 import pandas as pd
 import os
 from google_sheet_writer import write_to_google_sheet
@@ -8,7 +8,8 @@ from rag_helper import init_knowledge_base
 
 # ====== Configuration ======
 model = "gpt-4"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize knowledge base on app startup
 init_knowledge_base()
