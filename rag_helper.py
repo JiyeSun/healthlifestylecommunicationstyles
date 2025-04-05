@@ -5,8 +5,13 @@ import numpy as np
 import streamlit as st
 import openai
 
+from openai import OpenAI
+
+client = OpenAI(
+  api_key=os.environ['OPENAI_API_KEY'],  # this is also the default, it can be omitted
+)
 # Set OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+#openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global storage
 DOC_CHUNKS = []
