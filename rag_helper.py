@@ -7,9 +7,7 @@ import openai
 
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-# Set OpenAI API key
-#openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global storage
 DOC_CHUNKS = []
