@@ -7,7 +7,7 @@ import streamlit as st
 import openai 
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 DOC_CHUNKS = []
 CHUNK_EMBEDDINGS = []
