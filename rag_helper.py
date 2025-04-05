@@ -3,10 +3,9 @@ import fitz  # PyMuPDF
 from typing import List
 import numpy as np
 import streamlit as st
-from openai import OpenAI
+import openai
 
-# Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global storage
 DOC_CHUNKS = []
@@ -28,20 +27,12 @@ def extract_text_chunks(folder_path="data", chunk_size=300) -> List[str]:
     return chunks
 
 # Get a single embedding
-def get_embedding(text: str, model="text-embedding-3-small") -> List[float]:
-    response = client.embeddings.create(
-        model=model,
-        input=[text]
-    )
-    return response.data[0].embedding
-
-# Batch embeddings for all chunks
 def get_embeddings(texts: List[str]) -> np.ndarray:
-    response = client.embeddings.create(
+    response = openai.embeddings.create(
         model="text-embedding-3-small",
         input=texts
     )
-    return np.array([item.embedding for item in response.data])
+    return np.array([e.embedding for e in response.data])
 
 # Initialize the knowledge base
 def init_knowledge_base(folder_path="data"):
