@@ -120,9 +120,9 @@ style_prompt, few_shot = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 # ====== Debug Info ======
 debug = True
 if debug:
-    st.markdown("### 🛠️ Debug Info")
+    st.markdown("### 🛠️ User Info")
     st.markdown(f"- **Participant ID**: `{pid}`")
-    st.markdown(f"- **Condition**: `{cond}`")
+    #st.markdown(f"- **Condition**: `{cond}`")
     st.markdown("---")
 
 # ====== Main Interaction ======
