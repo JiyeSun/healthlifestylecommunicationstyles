@@ -300,6 +300,7 @@ if debug:
     st.markdown(f"- **Participant ID**: `{pid}`")
     st.markdown("**Tips:**")
     st.markdown("- **To begin, please type ‘Hi, healthmate.’ in the input box and click the Send button.**")
+    st.markdown("- **You will be asked about your current diet and exercise habits, followed by a question about your recent health goals, if any. After you provide this information, the chatbot will generate a weekly plan for you.")
     st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
     #st.markdown(f"- **Condition**: `{cond}`")
     st.markdown("---")
