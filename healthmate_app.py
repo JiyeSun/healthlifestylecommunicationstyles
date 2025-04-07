@@ -294,9 +294,9 @@ debug = True
 if debug:
     st.markdown("### User Info")
     st.markdown(f"- **Participant ID**: `{pid}`")
-    st.markdown("Tips: ")
-    st.markdown("- Please type 'Hi' in the blank and click the Send button to start.")
-    st.markdown("- Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.")
+    st.markdown("**Tips:**")
+    st.markdown("- **To begin, please type ‘Hi’ in the input box and click the Send button.**")
+    st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
     #st.markdown(f"- **Condition**: `{cond}`")
     st.markdown("---")
 
