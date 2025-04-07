@@ -286,7 +286,8 @@ if "log" not in st.session_state:
 
 # ====== UI ======
 st.title("🩺 HealthMate – AI Health Assistant")
-st.markdown("Please type 'Hi' in the blank and click the Send button to start. ")
+st.markdown("Tips: ")
+st.markdown("Please type 'Hi' in the blank and click the Send button to start.")
 st.markdown("Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.")
 pid, cond = get_url_params()
 style_prompt, few_shot = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
