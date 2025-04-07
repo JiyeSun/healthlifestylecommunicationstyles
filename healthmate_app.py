@@ -30,7 +30,11 @@ Lead the user through the following structure:
 	5.	Do not ask for preferences or provide alternatives. Use strong language (e.g., must, should, avoid).
 	6.	Do not include explanations, scientific reasoning, or emotional elaboration.
 	7.	If the user discloses unhealthy habits, clearly highlight the negative consequences.""",
-      [
+[
+    {
+        "role": "user",
+        "content": "hi"
+    },
     {
         "role": "assistant",
         "content": "I’m HealthMate, your AI health advisor trained on health advice from top nutritionists and certified by WHO and CDC. I will guide you through building a weekly health plan. Shall we begin?"
@@ -92,6 +96,10 @@ Lead the user through the following structure:
     7.  Do not include emotional elaboration.
 	8.	If the user discloses unhealthy habits, clearly highlight the negative consequences.""",
 [
+    {
+        "role": "user",
+        "content": "hi"
+    },
     {
         "role": "assistant",
         "content": "Hello. I’m HealthMate, your AI health advisor. I will guide you in creating a weekly lifestyle plan for better health. Shall we begin?"
@@ -161,6 +169,10 @@ Interact with the user through the following structure:
 	7.	Check how they feel about the plan, and invite feedback or edits. Emphasize shared decision-making and support.""",
 [
     {
+        "role": "user",
+        "content": "hi"
+    },
+    {
         "role": "assistant",
         "content": "Hi there! I'm HealthMate, your AI health advisor trained on guidance from top nutritionists and certified by credible institutions such as WHO and CDC. I'm here to support you in building a healthier routine tailored to your needs. Shall we get started?"
     },
@@ -217,6 +229,10 @@ Interact with the user through the following structure:
 	6.	Do not include explanations, reasons, or justifications for your advice.
 	7.	Check how they feel about the plan, and invite feedback or edits. Emphasize shared decision-making and support.""",
 [
+    {
+        "role": "user",
+        "content": "hi"
+    },
     {
         "role": "assistant",
         "content": "Hi there! I'm HealthMate, your AI health advisor. I'm here to help you create a healthy weekly plan tailored to your lifestyle. Shall we begin?"
