@@ -300,10 +300,12 @@ if debug:
     #st.markdown(f"- **Condition**: `{cond}`")
     st.markdown("---")
 
-# ====== Main Interaction ======
-user_input = st.text_input("Ask HealthMate a question about your health:")
+# ====== Main Interaction (with Enter to Send + Input Clear) ======
+with st.form("chat_form", clear_on_submit=True):
+    user_input = st.text_input("Ask HealthMate a question about your health:", key="input_text", placeholder="Type here and press Enter...")
+    submitted = st.form_submit_button("Send")
 
-if st.button("Send") and user_input:
+if submitted and user_input:
     # Get context from knowledge base
     context = get_knowledge_context(user_input)
 
