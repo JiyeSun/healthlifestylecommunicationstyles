@@ -358,7 +358,7 @@ if st.button("Finish and continue survey"):
     df = pd.DataFrame(st.session_state.log)
     df.to_csv(f"chatlog_{pid}.csv", index=False)
     write_to_google_sheet(st.session_state.log)
-    redirect_url = f"https://iu.co1.qualtrics.com/jfe/form/SV_3xCeoGcmlgTB0ge?pid={pid}"
+    redirect_url = f"https://iu.co1.qualtrics.com/jfe/form/SV_3xCeoGcmlgTB0ge"
     html_redirect = (
         f'<meta http-equiv="refresh" content="1;url={redirect_url}">'
         f'<p style="display:none;">Redirecting... <a href=\"{redirect_url}\">Click here</a>.</p>'
