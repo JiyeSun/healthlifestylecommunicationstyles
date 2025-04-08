@@ -354,10 +354,10 @@ If you're unsure, it's okay to say you don't know or that more consultation is r
 for sender, msg in st.session_state.chat:
     st.markdown(f"**{sender}:** {msg}")
 
-#if st.button("Finish and continue survey"):
-#    df = pd.DataFrame(st.session_state.log)
-#    df.to_csv(f"chatlog_{pid}.csv", index=False)
-#    write_to_google_sheet(st.session_state.log)
+if st.button("Finish and continue survey"):
+    df = pd.DataFrame(st.session_state.log)
+    df.to_csv(f"chatlog_{pid}.csv", index=False)
+    write_to_google_sheet(st.session_state.log)
 #    redirect_url = f"https://iu.co1.qualtrics.com/jfe/form/SV_3xCeoGcmlgTB0ge?pid={pid}&cond={cond}"
 #    html_redirect = (
 #        f'<meta http-equiv="refresh" content="1;url={redirect_url}">'
