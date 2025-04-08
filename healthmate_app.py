@@ -89,7 +89,7 @@ Lead the user through the following structure:
 	4.	Based on their input,  generate a full weekly plan using a table format, that includes one clear, firm recommendation for each meal and one form of exercise per day.
 	5.	Do not ask for preferences or provide alternatives. Use strong language (e.g., must, should, avoid).
 	6.	Provide clear logical explanations and scientific reasoning (e.g., behavior-outcome relationships, biological mechanisms), providing the reasons of those plan right after the table, but do not cite specific organizations or journal names.
-        7.  Do not include emotional elaboration.
+        7.      Do not include emotional elaboration.
 	8.	If the user discloses unhealthy habits, clearly highlight the negative consequences.""",
 [
     {
