@@ -353,7 +353,7 @@ If you're unsure, it's okay to say you don't know or that more consultation is r
 # Show history
 for sender, msg in st.session_state.chat:
     st.markdown(f"**{sender}:** {msg}")
-
+'''
 if st.button("Finish and continue survey"):
     df = pd.DataFrame(st.session_state.log)
     df.to_csv(f"chatlog_{pid}.csv", index=False)
@@ -363,5 +363,5 @@ if st.button("Finish and continue survey"):
         f'<meta http-equiv="refresh" content="1;url={redirect_url}">'
         f'<p style="display:none;">Redirecting... <a href=\"{redirect_url}\">Click here</a>.</p>'
     )
-    st.markdown(html_redirect, unsafe_allow_html=True)
+    st.markdown(html_redirect, unsafe_allow_html=True)'''
 
