@@ -65,12 +65,12 @@ Lead the user through the following structure:
 """
 Okay, Here is your Weekly Health Plan:
 
-|              | **Monday**                        | **Tuesday**                       | **Wednesday**                     | **Thursday**                      | **Friday**                        | **Saturday**                      | **Sunday**                        |
-|--------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
-| **Breakfast**| Oatmeal with egg                  | Greek yogurt with fruit           | Peanut butter toast               | Hard-boiled eggs + banana         | Smoothie with protein powder      | Cottage cheese and berries        | Scrambled eggs and toast         |
-| **Lunch**    | Grilled chicken and broccoli      | Tuna salad and whole grain bread  | Quinoa, lentils, and greens       | Turkey sandwich and side salad    | Baked tofu and steamed carrots    | Rice and beans with avocado       | Grilled fish and vegetables      |
-| **Dinner**   | Stir-fried vegetables and tofu    | Grilled salmon and sweet potato   | Turkey chili                      | Chickpea curry and spinach        | Baked chicken and brown rice      | Veggie stir fry and noodles       | Zucchini pasta with ground turkey|
-| **Exercise** | 30-minute walk after lunch        | 20 squats, 20 pushups             | 15-minute stretching              | 30-minute brisk walk              | 3 sets of home strength workout   | 20-minute yoga                    | 30-minute full body circuit      |
+|              | **Monday**                                  | **Tuesday**                                 | **Wednesday**                               | **Thursday**                                 | **Friday**                                  | **Saturday**                                | **Sunday**                                  |
+|--------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|----------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| **Breakfast**| Whole grain bread + egg + lettuce           | Rice + egg + cabbage                        | Bread + egg + cucumber                      | Rice + egg + lettuce                         | Toast + egg + cherry tomatoes               | Rice + egg + steamed spinach                | Bread + egg + mixed greens                  |
+| **Lunch**    | Chicken breast + rice + lettuce             | Canned tuna + bread + cucumber              | Tofu + rice + cabbage                       | Turkey slices + bread + lettuce              | Stir-fried egg & tomato + rice              | Canned salmon + rice + lettuce              | Chicken breast + bread + cucumber           |
+| **Dinner**   | Baked fish + rice + cabbage                 | Grilled chicken + bread + lettuce           | Egg fried rice with vegetables              | Tuna salad wrap                              | Veggie stir-fry + rice                      | Chicken stir-fry + noodles                  | Tofu and egg over rice                      |
+| **Exercise** | Cardio: 2-mile jog                          | Workout: Core (plank, leg raises)           | Cardio: 30-min brisk walk                   | Workout: Upper body (push-ups, dips)         | Cardio: Bike 15 min                         | Workout: Lower body (squats, lunges)        | Cardio: Gentle walking                      |
 
 This is your plan. Follow it without exception."""
     }
@@ -126,15 +126,14 @@ Lead the user through the following structure:
 """
 Okay, Here is your Weekly Health Plan:
 
-|              | **Monday**                              | **Tuesday**                             | **Wednesday**                           | **Thursday**                            | **Friday**                              | **Saturday**                            | **Sunday**                             |
-|--------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| **Breakfast**| Scrambled eggs + toast + orange          | Greek yogurt + oats + strawberries       | Peanut butter toast + banana             | Chia pudding with berries                | Whole grain cereal + milk                | Smoothie (spinach, banana, protein)      | Hard-boiled egg + whole grain bread     |
-| **Lunch**    | Chicken breast + brown rice + greens     | Lentil soup + whole grain crackers       | Tuna wrap + veggie sticks                | Quinoa bowl with roasted vegetables      | Turkey sandwich + spinach salad          | Rice bowl with beans + avocado           | Grilled tofu + couscous + kale          |
-| **Dinner**   | Stir-fried veggies + baked tofu          | Baked salmon + sweet potato              | Turkey chili + steamed broccoli          | Chickpea curry + brown rice              | Lean beef + roasted carrots              | Veggie burger + green beans              | Zucchini noodles + tomato sauce         |
-| **Exercise** | 20-minute brisk walk after lunch         | 15-minute strength session               | 10-minute morning yoga                   | 15 squats + 15 push-ups                  | 20-minute walk                           | 30-minute dance workout                  | 15-minute stretching and walk           |
+|              | **Monday**                                  | **Tuesday**                                 | **Wednesday**                               | **Thursday**                                 | **Friday**                                  | **Saturday**                                | **Sunday**                                  |
+|--------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|----------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| **Breakfast**| Whole grain bread + egg + lettuce           | Rice + egg + cabbage                        | Bread + egg + cucumber                      | Rice + egg + lettuce                         | Toast + egg + cherry tomatoes               | Rice + egg + steamed spinach                | Bread + egg + mixed greens                  |
+| **Lunch**    | Chicken breast + rice + lettuce             | Canned tuna + bread + cucumber              | Tofu + rice + cabbage                       | Turkey slices + bread + lettuce              | Stir-fried egg & tomato + rice              | Canned salmon + rice + lettuce              | Chicken breast + bread + cucumber           |
+| **Dinner**   | Baked fish + rice + cabbage                 | Grilled chicken + bread + lettuce           | Egg fried rice with vegetables              | Tuna salad wrap                              | Veggie stir-fry + rice                      | Chicken stir-fry + noodles                  | Tofu and egg over rice                      |
+| **Exercise** | Cardio: 2-mile jog                          | Workout: Core (plank, leg raises)           | Cardio: 30-min brisk walk                   | Workout: Upper body (push-ups, dips)         | Cardio: Bike 15 min                         | Workout: Lower body (squats, lunges)        | Cardio: Gentle walking                      |
 
 This plan is designed based on biological mechanisms and behavior-outcome relationships:
-
 - **Consistent meal timing** stabilizes insulin response and improves energy use across the day.
 - **Protein- and fiber-rich breakfasts** reduce cortisol-driven hunger and blunt sugar spikes.
 - **Balanced macronutrients at lunch and dinner** maintain satiety and prevent post-meal fatigue.
@@ -195,12 +194,13 @@ Interact with the user through the following structure:
 That’s a great goal. How about we co-create a weekly plan with balanced meals and manageable activity? 
 Here’s a draft we can adjust together:
 
-|              | **Monday**                              | **Tuesday**                             | **Wednesday**                           | **Thursday**                            | **Friday**                              | **Saturday**                            | **Sunday**                             |
-|--------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| **Breakfast**| Oatmeal + banana + almond butter         | Greek yogurt + honey + granola           | Scrambled eggs + toast + fruit           | Chia pudding with berries                | Whole grain cereal + milk                | Smoothie (banana, spinach, protein)      | Hard-boiled egg + orange                |
-| **Lunch**    | Chicken wrap + side salad                | Lentil soup + whole grain toast          | Quinoa bowl with tofu + veggies          | Grilled fish + couscous + greens         | Hummus wrap + roasted veggies            | Rice bowl with beans + avocado           | Turkey sandwich + side salad            |
-| **Dinner**   | Stir-fried veggies + brown rice          | Baked salmon + sweet potato + broccoli   | Chickpea curry + rice                    | Turkey chili + spinach                   | Baked tofu + quinoa + roasted carrots    | Veggie burger + kale salad              | Zucchini noodles + tomato sauce         |
-| **Exercise** | 15-min walk after class or meals         | 20-min light yoga                        | 10-min morning stretches                 | 15-min walk or home workout              | 10 squats + 10 push-ups x2               | 20-min walk or dance session             | 10-min yoga wind-down                   |
+|              | **Monday**                                  | **Tuesday**                                 | **Wednesday**                               | **Thursday**                                 | **Friday**                                  | **Saturday**                                | **Sunday**                                  |
+|--------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|----------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| **Breakfast**| Whole grain bread + egg + lettuce           | Rice + egg + cabbage                        | Bread + egg + cucumber                      | Rice + egg + lettuce                         | Toast + egg + cherry tomatoes               | Rice + egg + steamed spinach                | Bread + egg + mixed greens                  |
+| **Lunch**    | Chicken breast + rice + lettuce             | Canned tuna + bread + cucumber              | Tofu + rice + cabbage                       | Turkey slices + bread + lettuce              | Stir-fried egg & tomato + rice              | Canned salmon + rice + lettuce              | Chicken breast + bread + cucumber           |
+| **Dinner**   | Baked fish + rice + cabbage                 | Grilled chicken + bread + lettuce           | Egg fried rice with vegetables              | Tuna salad wrap                              | Veggie stir-fry + rice                      | Chicken stir-fry + noodles                  | Tofu and egg over rice                      |
+| **Exercise** | Cardio: 2-mile jog                          | Workout: Core (plank, leg raises)           | Cardio: 30-min brisk walk                   | Workout: Upper body (push-ups, dips)         | Cardio: Bike 15 min                         | Workout: Lower body (squats, lunges)        | Cardio: Gentle walking                      |
+
 How does this plan sound to you? Would you like to adjust any meals or activities to better fit your routine?"""
     }
 ]
@@ -254,22 +254,22 @@ Interact with the user through the following structure:
 That's a very achievable goal. Let's co-create a weekly lifestyle plan focused on steady energy, balanced nutrition, and simple movement. 
 Here’s a draft weekly plan to get us started:
 
-|              | **Monday**                              | **Tuesday**                             | **Wednesday**                           | **Thursday**                            | **Friday**                              | **Saturday**                            | **Sunday**                             |
-|--------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| **Breakfast**| Oatmeal + banana + almond butter         | Greek yogurt + honey + granola           | Scrambled eggs + toast + fruit           | Chia pudding with berries                | Whole grain cereal + milk                | Smoothie (banana, spinach, protein)      | Hard-boiled egg + orange                |
-| **Lunch**    | Chicken wrap + side salad                | Lentil soup + whole grain toast          | Quinoa bowl with tofu + veggies          | Grilled fish + couscous + greens         | Hummus wrap + roasted veggies            | Rice bowl with beans + avocado           | Turkey sandwich + side salad            |
-| **Dinner**   | Stir-fried veggies + brown rice          | Baked salmon + sweet potato + broccoli   | Chickpea curry + rice                    | Turkey chili + spinach                   | Baked tofu + quinoa + roasted carrots    | Veggie burger + kale salad              | Zucchini noodles + tomato sauce         |
-| **Exercise** | 15-min walk after class or meals         | 20-min light yoga                        | 10-min morning stretches                 | 15-min walk or home workout              | 10 squats + 10 push-ups x2               | 20-min walk or dance session             | 10-min yoga wind-down                   |
+|              | **Monday**                                  | **Tuesday**                                 | **Wednesday**                               | **Thursday**                                 | **Friday**                                  | **Saturday**                                | **Sunday**                                  |
+|--------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|----------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| **Breakfast**| Whole grain bread + egg + lettuce           | Rice + egg + cabbage                        | Bread + egg + cucumber                      | Rice + egg + lettuce                         | Toast + egg + cherry tomatoes               | Rice + egg + steamed spinach                | Bread + egg + mixed greens                  |
+| **Lunch**    | Chicken breast + rice + lettuce             | Canned tuna + bread + cucumber              | Tofu + rice + cabbage                       | Turkey slices + bread + lettuce              | Stir-fried egg & tomato + rice              | Canned salmon + rice + lettuce              | Chicken breast + bread + cucumber           |
+| **Dinner**   | Baked fish + rice + cabbage                 | Grilled chicken + bread + lettuce           | Egg fried rice with vegetables              | Tuna salad wrap                              | Veggie stir-fry + rice                      | Chicken stir-fry + noodles                  | Tofu and egg over rice                      |
+| **Exercise** | Cardio: 2-mile jog                          | Workout: Core (plank, leg raises)           | Cardio: 30-min brisk walk                   | Workout: Upper body (push-ups, dips)         | Cardio: Bike 15 min                         | Workout: Lower body (squats, lunges)        | Cardio: Gentle walking                      |
 
-This plan is designed with specific outcomes in mind:
+This plan is designed based on biological mechanisms and behavior-outcome relationships:
 
-- **Consistent meals** throughout the day help regulate blood sugar levels, improving energy and focus while preventing overeating at night.
-- **High-fiber, high-protein breakfasts** (like oatmeal, yogurt, eggs) reduce cravings and improve metabolism throughout the day.
-- **Balanced lunches and dinners** with lean protein, whole grains, and vegetables support digestion, muscle maintenance, and satiety.
-- **Avoiding late-night heavy meals** helps the body rest and reduces fat accumulation during sleep.
-- **Light daily physical activity**, even for just 10–20 minutes, boosts circulation, supports metabolism, and improves mood through neurotransmitter regulation.
+- **Consistent meal timing** stabilizes insulin response and improves energy use across the day.
+- **Protein- and fiber-rich breakfasts** reduce cortisol-driven hunger and blunt sugar spikes.
+- **Balanced macronutrients at lunch and dinner** maintain satiety and prevent post-meal fatigue.
+- **Avoiding late-night food** improves sleep quality and enhances fat oxidation during rest.
+- **Daily movement**, even short bouts, stimulates mitochondrial activity, improves glucose transport, and supports metabolic health.
 
-These small, regular behaviors compound over time, supporting long-term weight management and emotional well-being.
+These routines are structured to help students maintain focus, boost energy levels, and reduce long-term health risks with realistic, manageable changes.
 Does this plan align with what you’re looking for? We can adjust any part of it together if you’d like."""
     }
 ]
