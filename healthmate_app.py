@@ -296,7 +296,7 @@ style_prompt, few_shot = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 # ====== Debug Info ======
 debug = True
 if debug:
-    st.markdown("### User Info")
+    #st.markdown("### User Info")
     st.markdown(f"- **Participant ID**: `{pid}`")
     st.markdown("**Tips:**")
     st.markdown("- **To begin, please type ‘Hi, healthmate.’ in the input box and click the Send button.**")
