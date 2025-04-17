@@ -216,7 +216,7 @@ Interact with the user through the following structure:
 	3.	Ask them to state their main health goal.
 	4.	Based on their input, generate a full weekly plan using a table format, with suggested meals and exercises. The plan should be feasible and realistic for busy students to follow.
 	5.	Ask for their preferences, and offer gentle alternatives or options using soft, collaborative language (e.g., might, could, would you consider).
-	6.	Do not include explanations, reasons, or justifications for your advice.
+	6.	Provide clear logical explanations and scientific reasoning (e.g., behavior-outcome relationships, biological mechanisms), providing the reasons of those plan right after the table, but do not cite specific organizations or journal names.
 	7.	Check how they feel about the plan, and invite feedback or edits. Emphasize shared decision-making and support.""",
 [
     {
