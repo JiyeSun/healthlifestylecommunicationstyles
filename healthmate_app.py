@@ -269,7 +269,6 @@ This plan is designed based on biological mechanisms and behavior-outcome relati
 - **Avoiding late-night food** improves sleep quality and enhances fat oxidation during rest.
 - **Daily movement**, even short bouts, stimulates mitochondrial activity, improves glucose transport, and supports metabolic health.
 
-These routines are structured to help students maintain focus, boost energy levels, and reduce long-term health risks with realistic, manageable changes.
 Does this plan align with what you’re looking for? We can adjust any part of it together if you’d like."""
     }
 ]
