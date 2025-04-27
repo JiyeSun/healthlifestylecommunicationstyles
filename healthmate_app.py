@@ -84,9 +84,9 @@ if "log" not in st.session_state:
     st.session_state.log = []
 
 # ====== UI ======
-st.title("🩺 HealthMate – AI Health Assistant")
+st.title("HealthMate – AI Health Assistant")
 pid, cond = get_url_params()
-style_prompt, few_shot = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
+style_prompt = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 
 # ====== Debug Info ======
 debug = True
@@ -120,7 +120,7 @@ The following reference information may be helpful. Use it as background to info
 If you're unsure, it's okay to say you don't know or that more consultation is recommended.
 """
 
-    messages = [{"role": "system", "content": system_prompt}] + few_shot
+    messages = [{"role": "system", "content": system_prompt}]
     for sender, msg in st.session_state.chat:
         role = "user" if sender == "User" else "assistant"
         messages.append({"role": role, "content": msg})
@@ -151,7 +151,7 @@ If you're unsure, it's okay to say you don't know or that more consultation is r
     try:
         write_to_google_sheet([log_entry])
     except Exception as e:
-        st.warning(f"⚠️ Failed to write to Google Sheet: {e}")
+        st.warning(f"Failed to write to Google Sheet: {e}")
 
 # Show history
 for sender, msg in st.session_state.chat:
