@@ -4,7 +4,7 @@ from typing import List
 import numpy as np
 import streamlit as st
 from openai import OpenAI
-client = OpenAI()
+#client = OpenAI()
 # Initialize the OpenAI client (ensure your API key is set)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
