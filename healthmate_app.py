@@ -74,7 +74,7 @@ Interact with the user through the following structure:
 def get_url_params():
     query_params = st.experimental_get_query_params()
     pid = query_params.get("pid", ["unknown"])[0]
-    cond = query_params.get("cond", ["1"])[0]
+    cond = query_params.get("cond", ["2"])[0]
     return pid, cond
 
 # ====== Init State ======
