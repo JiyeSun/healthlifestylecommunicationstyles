@@ -95,6 +95,8 @@ if debug:
     #st.markdown(f"- **Participant ID**: `{pid}`")
     #st.markdown("**Tips:**")
     st.markdown("**To begin, please type ‘Hi, healthmate.’ in the input box and click the Send button.**")
+    st.markdown("- **At the beginning, this chatbot may run a bit slow, please be patient to wait a bit for the responses.**")
+    st.markdown("- **Please ask 2 or more nutrition related questions to the chatbot for the responses.**")
     #st.markdown("- **You will be asked about your current diet and exercise habits, followed by a question about your recent health goals, if any. After you provide this information, the chatbot will generate a weekly plan for you.**")
     #st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
     #st.markdown(f"- **Condition**: `{cond}`")
