@@ -94,12 +94,12 @@ debug = True
 if debug:
     st.markdown("### User Info")
     st.markdown(f"- **Participant ID**: `{pid}`")
+    st.markdown(f"- **Condition**: `{cond}`")
     #st.markdown("**Tips:**")
-    st.markdown("Please type ‘**Hi, healthmate.**’ to begin, and ask at least **2 nutrition-related questions** to have the responses. The chatbot may respond a bit slowly at first. Please be patient.")
+    st.markdown("Please type ‘**Hi**’ to begin. And each time after the chatting, please provide the MTurk survey code to the chatbot.")
     #st.markdown("")
     #st.markdown("- **You will be asked about your current diet and exercise habits, followed by a question about your recent health goals, if any. After you provide this information, the chatbot will generate a weekly plan for you.**")
     #st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
-    st.markdown(f"- **Condition**: `{cond}`")
     #st.markdown("---")
 
 # ====== Main Interaction (with Enter to Send + Input Clear) ======
