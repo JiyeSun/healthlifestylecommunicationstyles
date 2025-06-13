@@ -14,7 +14,7 @@ model = "gpt-4"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize knowledge base on app startup
-init_knowledge_base()
+#init_knowledge_base()
 
 # ====== Prompt + Few-shot Definitions ======
 PROMPT_DICT = {
