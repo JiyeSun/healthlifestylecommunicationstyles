@@ -183,16 +183,16 @@ if "log" not in st.session_state:
     st.session_state.log = []
 
 # ====== UI ======
-st.title("HealthMate – AI Health Assistant")
+st.title("MindLog – AI mental health assistant")
 pid, cond = get_url_params()
 style_prompt = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 
 # ====== Debug Info ======
 debug = True
 if debug:
-    st.markdown("### User Info")
-    st.markdown(f"- **Participant ID**: `{pid}`")
-    st.markdown(f"- **Condition**: `{cond}`")
+    st.markdown("##### User Info")
+    st.markdown(f"Participant ID: `{pid}`")
+    st.markdown(f"Condition: `{cond}`")
     #st.markdown("**Tips:**")
     st.markdown("Type ‘Hi’ to get started. You’ll chat with the bot three times. After each round, make sure to send your MTurk code in the chat.")
     #st.markdown("")
