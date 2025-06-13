@@ -190,7 +190,7 @@ style_prompt = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 # ====== Debug Info ======
 debug = True
 if debug:
-    st.markdown("##### User Info")
+    #st.markdown("##### User Info")
     st.markdown(f"Participant ID: `{pid}`")
     st.markdown(f"Condition: `{cond}`")
     #st.markdown("**Tips:**")
