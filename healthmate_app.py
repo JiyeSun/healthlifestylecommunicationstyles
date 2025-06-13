@@ -4,8 +4,8 @@ import openai
 import pandas as pd
 import os
 from google_sheet_writer import write_to_google_sheet
-from rag_helper import get_knowledge_context
-from rag_helper import init_knowledge_base
+#from rag_helper import get_knowledge_context
+#from rag_helper import init_knowledge_base
 from fewshot_definitions import FEW_SHOTS
 
 # ====== Configuration ======
@@ -68,18 +68,11 @@ with st.form("chat_form", clear_on_submit=True):
 
 if submitted and user_input:
     # Get context from knowledge base
-    context = get_knowledge_context(user_input)
+    #context = get_knowledge_context(user_input)
 
-    system_prompt = f"""
-You are HealthMate.
+    system_prompt = f"""You are HealthMate.
 {style_prompt}
-
-The following reference information may be helpful. Use it as background to inform your response, but you do not need to strictly follow or quote it:
-
-{context}
-
-If you're unsure, it's okay to say you don't know or that more consultation is recommended.
-"""
+If you're unsure, it's okay to say you don't know or that more consultation is recommended."""
 
     messages = [{"role": "system", "content": system_prompt}]
     few_shots = FEW_SHOTS.get(cond)
