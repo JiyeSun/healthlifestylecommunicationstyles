@@ -183,7 +183,7 @@ if "log" not in st.session_state:
     st.session_state.log = []
 
 # ====== UI ======
-st.title("MindLog – AI mental health assistant")
+st.title("MindLog – AI Mood Tracker")
 pid, cond = get_url_params()
 style_prompt = PROMPT_DICT.get(cond, PROMPT_DICT["1"])
 
