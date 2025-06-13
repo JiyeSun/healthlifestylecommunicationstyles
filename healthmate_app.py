@@ -194,7 +194,7 @@ if debug:
     st.markdown(f"- **Participant ID**: `{pid}`")
     st.markdown(f"- **Condition**: `{cond}`")
     #st.markdown("**Tips:**")
-    st.markdown("Please type ‘**Hi**’ to begin. And each time after the chatting, please provide the MTurk survey code to the chatbot.")
+    st.markdown("Type ‘Hi’ to get started. You’ll chat with the bot three times. After each round, make sure to send your MTurk code in the chat.")
     #st.markdown("")
     #st.markdown("- **You will be asked about your current diet and exercise habits, followed by a question about your recent health goals, if any. After you provide this information, the chatbot will generate a weekly plan for you.**")
     #st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
