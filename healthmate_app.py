@@ -194,7 +194,7 @@ if debug:
     st.markdown(f"Participant ID: `{pid}` | Condition: `{cond}`")
     #st.markdown(f"Condition: `{cond}`")
     #st.markdown("**Tips:**")
-    st.markdown("Type ‘Hi’ to get started. You’ll chat with the bot three times. After each round, make sure to send your MTurk code in the chat. If you are not Mturk worker, just ignore this information. When the bot repies 'Session end', you can go to the next page.")
+    st.markdown("When the bot repies 'Session end', you can go to the next page.")
     #st.markdown("")
     #st.markdown("- **You will be asked about your current diet and exercise habits, followed by a question about your recent health goals, if any. After you provide this information, the chatbot will generate a weekly plan for you.**")
     #st.markdown("- **Please be patient—when the upper-right corner of the page shows ‘Running,’ it means the chatbot is processing your input.**")
@@ -202,7 +202,7 @@ if debug:
 
 # ====== Main Interaction (with Enter to Send + Input Clear) ======
 with st.form("chat_form", clear_on_submit=True):
-    user_input = st.text_input("Ask HealthMate a question about your health:", key="input_text", placeholder="Type here and press Enter...")
+    user_input = st.text_input("Type ‘Hi’ to get started.", key="input_text", placeholder="Type here and press Enter...")
     submitted = st.form_submit_button("Send")
 
 if submitted and user_input:
